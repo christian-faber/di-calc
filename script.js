@@ -19,7 +19,14 @@ function divide(num1, num2) {
 }
 
 const operate = (firstArg, secondArg, operator) => {
-  switch(operator) {
-    case '+': return add(firstArg, secondArg);
+  switch (operator) {
+    case "+":
+      return add(firstArg, secondArg);
+    case "-":
+      return subtract(firstArg, secondArg);
+    case "*":
+      return multiply(firstArg, secondArg);
+    case "/":
+      return divide(firstArg, secondArg);
   }
-}
+};
