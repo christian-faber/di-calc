@@ -27,8 +27,16 @@ function display(e) {
   displayNum.value += e.target.textContent;
   if (!operator) {
     firstArg += e.target.textContent;
-    console.log('FIRST ARG', firstArg)
-  } 
+    console.log("FIRST ARG", firstArg);
+    displayNum.value = "";
+  } else if (e.target.classList.includes("operator")) {
+    operator = e.target.textContent;
+    console.log("operator log", operator);
+  } else if (operator) {
+    secondArg += e.target.textContent;
+
+    console.log("second ARG", secondArg);
+  }
 }
 // compute all
 
