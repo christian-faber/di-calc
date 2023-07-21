@@ -52,6 +52,11 @@ const operate = (firstArg, secondArg, operator) => {
       return divide(firstArg, secondArg);
   }
 };
+function clear() {
+  firstArg = "";
+  secondArg = "";
+  operator = "";
+}
 
 numButt.forEach((button) => {
   button.addEventListener("click", display);
