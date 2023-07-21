@@ -21,6 +21,7 @@
 
 #row {
   display: flex;
+  height: 120px;
   flex-direction: row;
   justify-content: space-between;
 }
@@ -30,10 +31,11 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  height: 25%;
+  height: full;
   width: 25%;
   box-shadow: 2px 2px 2px 2px gray;
   margin: 5px;
+  font-size: xx-large;
 }
 .number {
   background-color: azure;

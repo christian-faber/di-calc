@@ -22,7 +22,9 @@ function divide(num1, num2) {
 }
 
 //Populate Display. Change value to clicked button.
-function display() {}
+function display(e) {
+  console.log(e.target.textContent);
+}
 
 const operate = (firstArg, secondArg, operator) => {
   switch (operator) {
@@ -38,9 +40,9 @@ const operate = (firstArg, secondArg, operator) => {
 };
 
 numButt.forEach((button) => {
-  button.addEventListener("click", display());
+  button.addEventListener("click", display);
 });
 
 opButt.forEach((button) => {
-  button.addEventListener("click", display());
+  button.addEventListener("click", display);
 });
