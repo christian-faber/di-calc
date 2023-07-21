@@ -1,7 +1,7 @@
 let firstArg = "";
 let secondArg = "";
 let operator = null;
-const displayNum = document.getElementById("display").value;
+const displayNum = document.getElementById("display");
 const numButt = document.querySelectorAll(".number");
 const opButt = document.querySelectorAll(".operator");
 
@@ -23,7 +23,7 @@ function divide(num1, num2) {
 
 //Populate Display. Change value to clicked button.
 function display(e) {
-  console.log(e.target.textContent);
+  displayNum.value += e.target.textContent;
 }
 
 const operate = (firstArg, secondArg, operator) => {
