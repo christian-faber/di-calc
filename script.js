@@ -18,6 +18,9 @@ function divide(num1, num2) {
   return num1 / num2;
 }
 
+//Populate Display. Change value to clicked button.
+function display() {}
+
 const operate = (firstArg, secondArg, operator) => {
   switch (operator) {
     case "+":
@@ -31,6 +34,4 @@ const operate = (firstArg, secondArg, operator) => {
   }
 };
 
-const displayNum = document.querySelector ("#display")
-
-
+const displayNum = document.getElementById("display").value;
