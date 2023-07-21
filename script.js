@@ -30,3 +30,7 @@ const operate = (firstArg, secondArg, operator) => {
       return divide(firstArg, secondArg);
   }
 };
+
+const displayNum = document.querySelector ("#display")
+
+
