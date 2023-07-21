@@ -1,6 +1,6 @@
 let firstArg = "";
 let secondArg = "";
-let operator = null;
+let operator = "";
 const displayNum = document.getElementById("display");
 const numButt = document.querySelectorAll(".number");
 const opButt = document.querySelectorAll(".operator");
@@ -25,11 +25,14 @@ function divide(num1, num2) {
 //Populate Display. Change value to clicked button.
 function display(e) {
   displayNum.value += e.target.textContent;
+  if (!operator) {
+    firstArg += e.target.textContent;
+    console.log('FIRST ARG', firstArg)
+  } 
 }
 // compute all
 
 const operate = (firstArg, secondArg, operator) => {
-  console.log("test");
   switch (operator) {
     case "+":
       return add(firstArg, secondArg);
