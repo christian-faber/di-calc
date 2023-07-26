@@ -1,25 +1,38 @@
-#display {
+.screen {
+  margin: .25rem;
+  border: inset 3px gray;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+input {
   background-color: white;
-  width: 75%;
-  height: 75px;
-  margin: 5px;
-  font-size: xx-large;
+  padding: 1rem;
+  border: none;
+  font-size: 2rem;
   text-align: right;
   padding-top: 10px;
 }
-#top {
+
+#total {
+  font-size: 1.5rem;
+}
+
+.top {
   display: flex;
   flex-direction: column;
 }
-#titanium {
+
+.titanium {
+  padding: 1rem;
   background-color: silver;
 }
 
-#answer {
+.answer {
   color: black;
 }
 
-#row {
+.row {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -35,16 +48,20 @@
   box-shadow: 2px 2px 2px 2px gray;
   margin: 5px;
 }
+
 .number {
   background-color: azure;
 }
+
 .operator {
   background-color: #863399;
   color: white;
 }
+
 p {
   font-size: 30px;
 }
+
 .container {
   display: flex;
 }
@@ -52,12 +69,15 @@ p {
 .decimal {
   width: 30%;
 }
+
 .zero {
   width: 30%;
 }
+
 .equal {
   width: 41%;
 }
+
 .del {
   width: 53%;
 }

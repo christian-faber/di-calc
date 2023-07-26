@@ -1,6 +1,8 @@
 let firstArg = '';
 let secondArg = '';
 let operator = null;
+const total = document.getElementById('total');
+const display = document.getElementById('display');
 
 function add(num1, num2) {
   return num1 + num2;
@@ -19,11 +21,14 @@ function divide(num1, num2) {
 }
 
 function repaint() {
-  document.getElementById('display').value = secondArg;
+  total.value = firstArg;
+  display.value = secondArg;
 }
 
 function doMath() {
+  if (!operator || !firstArg || !secondArg) return;
   secondArg = `${operator(+firstArg, +secondArg)}`;
+  firstArg = '';
 }
 
 function operatorPushed(op) {
@@ -38,7 +43,8 @@ function operatorPushed(op) {
 
 function btnPush(evt) {
   const btn = evt.target.dataset.btn;
-  let canDoMath = !!firstArg;
+  if (!btn) return;
+
   switch (btn) {
     case 'x':
       operatorPushed(multiply);
@@ -64,7 +70,6 @@ function btnPush(evt) {
       secondArg += btn;
       break;
   }
-
   repaint();
 }
 
