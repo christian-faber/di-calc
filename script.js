@@ -57,24 +57,18 @@ function display(e) {
 
 // compute all
 
-const operate = (e) => {
-  if (firstArg && secondArg) {
-    const num1 = parseFloat(firstArg);
-    const num2 = parseFloat(secondArg);
-    if (isNaN(num1) || isNaN(num2) || operator === "") {
-      displayNum.innerText = "Error";
-      clear();
-    } else {
-      console.log("working");
-      const result = computeResults(num1, num2);
-      displayNum.innerText = result;
-      firstArg = result.toString();
-      secondArg = "";
-    }
+//
+const operate = () => {
+  const num1 = parseFloat(firstArg);
+  const num2 = parseFloat(secondArg);
 
-    if (e.target.classList.contains("operator")) {
-      operator = e.target.innerText;
-    }
+  if (!firstArg || isNaN(num1) || isNaN(num2) || operator === "") {
+    displayNum.innerText = "Error";
+    clear();
+  } else {
+    const result = computeResults(num1, num2);
+    displayNum.innerText = result;
+    firstArg = result.toString();
   }
 };
 
@@ -84,7 +78,7 @@ const computeResults = (num1, num2) => {
       return add(num1, num2);
     case "-":
       return subtract(num1, num2);
-    case "*":
+    case "x":
       return multiply(num1, num2);
     case "/":
       return divide(num1, num2);
@@ -107,25 +101,16 @@ opButt.forEach((button) => {
   button.addEventListener("click", (e) => {
     if (!firstArg) {
       firstArg = displayNum.innerText;
-      operator = buttonText;
-    } else if (firstArg && operator) {
-      operate();
+    } else if (firstArg && operator && secondArg) {
+      operate(); // Calculate the result using the previous operator
+      firstArg = displayNum.innerText; // Update firstArg with the result
+      secondArg = ""; // Clear secondArg for the next input
     }
-    /*
-    if no first arg
-    set first arg to box content and clear box
-    set operator
-    
-    if(first arg and operator)
-    calculate
-    
-    */
     operator = e.target.textContent;
-
     display(e);
   });
-  button.addEventListener("click", operate);
 });
+//button.addEventListener("click", operate);
 
 equalsButt.addEventListener("click", operate);
 
